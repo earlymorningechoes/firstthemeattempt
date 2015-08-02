@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="color:Background" content="#000000" />
+  <meta name="color:SidebarBackground" content="#ececec" />
+  <meta name="color:ScrollBar" content="#acd066" />
+  <meta name="font:Title" content="Arial" />
+  <meta name="text:BlogTitle" content="" />
+
+  <title>{title}{bock:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+  <link rel="shortcut icon" href="{Favicon}" />
+
+  <style type="text/css">
+    body {background-color: {color:Background};}
+  
+    /*SIDEBAR*/
+    #Sidebar {
+      width:300px;
+      height:100%;
+      background-color:{color:SidebarBackground};
+      position:fixed;
+      margin:0;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div id="Sidebar"></div>
+
+
+
+</body>
+
+
+</html>
