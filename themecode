@@ -4,6 +4,7 @@
   <meta name="color:Background" content="#000000" />
   <meta name="color:SidebarBackground" content="#ececec" />
   <meta name="color:ScrollBar" content="#acd066" />
+  <meta name="color:Spacer" content="#acd066" />
   <meta name="font:Title" content="Arial" />
   <meta name="text:BlogTitle" content="" />
 
@@ -13,7 +14,11 @@
   <link rel="shortcut icon" href="{Favicon}" />
 
   <style type="text/css">
-    body {background-color: {color:Background};}
+    body {
+      background-color: {color:Background};
+      margin: 0;
+      word-wrap: break-word
+    }
   
     /*SIDEBAR*/
     #Sidebar {
@@ -24,12 +29,20 @@
       margin:0;
     }
     
+    #Spacer {
+      width:25px;
+      height:100%;
+      background-color:{color:Spacer};
+      position:fixed;
+      margin:275px;
+    
   </style>
 </head>
 
 <body>
-  <div id="Sidebar"></div>
-
+  <div id="Sidebar">
+    <div id="Spacer"></div>
+  </div>
 
 
 </body>
