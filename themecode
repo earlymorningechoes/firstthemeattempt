@@ -5,8 +5,9 @@
   <meta name="color:SidebarBackground" content="#ececec" />
   <meta name="color:ScrollBar" content="#acd066" />
   <meta name="color:Spacer" content="#acd066" />
+  <meta name="color:Blog Title Color" content="#f0f0f0">
   <meta name="font:Title" content="Arial" />
-  <meta name="text:BlogTitle" content="" />
+  <meta name="text:Blog Title" content="" />
 
   <title>{title}{bock:PostSummary} - {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
@@ -22,19 +23,32 @@
   
     /*SIDEBAR*/
     #Sidebar {
-      width:300px;
+      width:400px;
       height:100%;
       background-color:{color:SidebarBackground};
       position:fixed;
-      margin:0;
+      right:0px;
     }
     
     #Spacer {
       width:25px;
       height:100%;
       background-color:{color:Spacer};
-      position:fixed;
-      margin:275px;
+      float:left;
+      border-radius:5px;
+    }
+    
+    #BlogTitle {
+      font-family:{font:Title};
+      color:{color:Blog Title Color}
+      font-size:24px;
+    }
+    
+    #Description {
+      width:350px;
+      margin-top:300px;
+      position:absolute;
+    }
     
   </style>
 </head>
@@ -42,6 +56,10 @@
 <body>
   <div id="Sidebar">
     <div id="Spacer"></div>
+    <div id="Description">
+      <div id="BlogTitle">{text:Blog Title}</div>
+      
+    </div>
   </div>
 
 
