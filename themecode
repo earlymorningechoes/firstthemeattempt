@@ -5,14 +5,15 @@
   <meta name="color:SidebarBackground" content="#ececec" />
   <meta name="color:ScrollBar" content="#acd066" />
   <meta name="color:Spacer" content="#acd066" />
-  <meta name="color:Blog Title Color" content="#f0f0f0">
-  <meta name="font:Title" content="Arial" />
+  <meta name="color:Blog Title Color" content="000000">
   <meta name="text:Blog Title" content="" />
+  <meta name="text:Subtitle" content"" />
 
   <title>{title}{bock:PostSummary} - {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
   <link rel="shortcut icon" href="{Favicon}" />
+  <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 
   <style type="text/css">
     body {
@@ -39,15 +40,32 @@
     }
     
     #BlogTitle {
-      font-family:{font:Title};
+      font-family: 'Great Vibes', cursive;
       color:{color:Blog Title Color}
-      font-size:24px;
+      font-size:40px;
+      text-transform:lowercase;
+      left:100px;
+    }
+    
+    p {
+      font-size:60px;
+    }
+    
+    #Subtitle {
+      font-family:Arial,sans-serif;
+      color:{color:Blog Title Color};
+      font-size:10px;
+      text-align:right;
+      text-transform:uppercase;
+      top:400px;
     }
     
     #Description {
       width:350px;
-      margin-top:300px;
+      top:200px;
+      right:50px;
       position:absolute;
+      height:500px;
     }
     
   </style>
@@ -56,8 +74,10 @@
 <body>
   <div id="Sidebar">
     <div id="Spacer"></div>
+
     <div id="Description">
-      <div id="BlogTitle">{text:Blog Title}</div>
+        <div id="BlogTitle"><p>{text:Blog Title}</p></div>
+        <div id="Subtitle">{text:Subtitle}</div>
       
     </div>
   </div>
