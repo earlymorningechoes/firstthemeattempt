@@ -8,6 +8,7 @@
   <meta name="color:Blog Title Color" content="000000">
   <meta name="text:Blog Title" content="" />
   <meta name="text:Subtitle" content"" />
+  <meta name="color:Description Text" content"#000000" />
 
   <title>{title}{bock:PostSummary} - {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
@@ -44,10 +45,10 @@
       color:{color:Blog Title Color}
       font-size:40px;
       text-transform:lowercase;
-      left:100px;
+      margin-left:50px;
     }
     
-    p {
+    #BlogTitle p {
       font-size:60px;
     }
     
@@ -57,7 +58,7 @@
       font-size:10px;
       text-align:right;
       text-transform:uppercase;
-      top:400px;
+      margin-top:-75px;
     }
     
     #Description {
@@ -66,6 +67,33 @@
       right:50px;
       position:absolute;
       height:500px;
+      color:{color:Description Text};
+      font-size:10px;
+      font-family:Arial;
+    }
+    
+    #Description h3 {
+      margin-left:50px;
+      margin-top:40px;
+      font-size:10px;
+    }
+    
+    #Icon {
+      margin-top:-300px;
+      margin-left:136px;
+    }
+    
+    .links {
+      background-color:{color:Spacer};
+      height:auto;
+      width:auto;
+      color:{color:Description Text};
+      font-size:10px;
+      text-decoration:none;
+      float:left;
+      text-align:center;
+      padding: 3px 5px;
+      margin:2px;
     }
     
   </style>
@@ -74,13 +102,25 @@
 <body>
   <div id="Sidebar">
     <div id="Spacer"></div>
+    
+    {block:AskEnabled}<a href="/ask"><div class="links">{AskLabel}</div></a>{/block:AskEnabled}
+    {block:SubmissionsEnabled}<a href="/submit"><div class="links">{SubmitLabel}</div></a>{/block:SubmissionsEnabled}
+    {block:HasPages}{block:Pages}<a href="{url}"><div class="links">{Label}</div></a>{/block:Pages}{/block:HasPages}
 
     <div id="Description">
-        <div id="BlogTitle"><p>{text:Blog Title}</p></div>
-        <div id="Subtitle">{text:Subtitle}</div>
+        <div id="BlogTitle"><p>{text:Blog Title}</p>
+          <div id="Subtitle">{text:Subtitle}</div>
+        </div>
+        
+        <h3>{Description}</h3>
+        
+        <div id="Icon">
+          <img src="{PortraitURL-96}" />
+        </div>
+        
       
-    </div>
-  </div>
+    </div> <!--description-->
+  </div> <!--sidebar-->
 
 
 </body>
