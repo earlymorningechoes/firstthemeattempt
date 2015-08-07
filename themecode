@@ -3,12 +3,24 @@
 <head>
   <meta name="color:Background" content="#000000" />
   <meta name="color:SidebarBackground" content="#ececec" />
-  <meta name="color:ScrollBar" content="#acd066" />
+  <meta name="color:Accent" content="#acd066" />
   <meta name="color:Spacer" content="#acd066" />
   <meta name="color:Blog Title Color" content="000000">
   <meta name="text:Blog Title" content="" />
   <meta name="text:Subtitle" content"" />
-  <meta name="color:Description Text" content"#000000" />
+  <meta name="color:DescriptionText" content"#000000" />
+  <meta name="text:Link1" content="" />
+  <meta name="text:Link1 Title" content="" />
+  <meta name="text:Link2" content="" />
+  <meta name="text:Link2 Title" content="" />
+  <meta name="text:Link3" content="" />
+  <meta name="text:Link3 Title" content="" />
+  <meta name="text:Link4" content="" />
+  <meta name="text:Link4 Title" content="" />
+  <meta name="text:Link5" content="" />
+  <meta name="text:Link5 Title" content="" />
+  <meta name="text:Link6" content="" />
+  <meta name="text:Link6 Title" content="" />
 
   <title>{title}{bock:PostSummary} - {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
@@ -30,14 +42,17 @@
       background-color:{color:SidebarBackground};
       position:fixed;
       right:0px;
+      border-radius:5px;
     }
     
     #Spacer {
-      width:25px;
+      width:100px;
       height:100%;
       background-color:{color:Spacer};
-      float:left;
       border-radius:5px;
+      margin-right:400px;
+      margin-left:auto;
+      position:fixed;
     }
     
     #BlogTitle {
@@ -83,17 +98,24 @@
       margin-left:136px;
     }
     
-    .links {
-      background-color:{color:Spacer};
+    #links {
+      background-color:{color:SidebarBackground};
       height:auto;
       width:auto;
-      color:{color:Description Text};
-      font-size:10px;
+      margin:200px auto 0 auto;
+      padding:2px;
+    }
+    
+    #links a {
+      color:{color:DescriptionText};
+      font-size:12px;
       text-decoration:none;
-      float:left;
       text-align:center;
-      padding: 3px 5px;
-      margin:2px;
+      padding: 5px 5px;
+      font-family:Arial;
+      text-transform:uppercase;
+      margin-left:10px;
+      margin-top:2px;
     }
     
   </style>
@@ -101,12 +123,6 @@
 
 <body>
   <div id="Sidebar">
-    <div id="Spacer"></div>
-    
-    {block:AskEnabled}<a href="/ask"><div class="links">{AskLabel}</div></a>{/block:AskEnabled}
-    {block:SubmissionsEnabled}<a href="/submit"><div class="links">{SubmitLabel}</div></a>{/block:SubmissionsEnabled}
-    {block:HasPages}{block:Pages}<a href="{url}"><div class="links">{Label}</div></a>{/block:Pages}{/block:HasPages}
-
     <div id="Description">
         <div id="BlogTitle"><p>{text:Blog Title}</p>
           <div id="Subtitle">{text:Subtitle}</div>
@@ -118,9 +134,28 @@
           <img src="{PortraitURL-96}" />
         </div>
         
+
       
     </div> <!--description-->
-  </div> <!--sidebar-->
+    
+
+    
+</div> <!--sidebar-->
+  
+    <div id="Spacer">
+      <div id="links">
+        <a href="/">home</a>
+        <a href="/ask">ask</a>
+   
+        {block:ifLink1}<a href="{text:Link1}">{text:Link1 Title}</a>{/block:ifLink1}
+        {block:ifLink2}<a href="{text:Link2}">{text:Link2 Title}</a>{/block:ifLink2}
+        {block:ifLink3}<a href="{text:Link3}">{text:Link3 Title}</a>{/block:ifLink3}
+        {block:ifLink4}<a href="{text:Link4}">{text:Link4 Title}</a>{/block:ifLink4}
+        {block:ifLink5}<a href="{text:Link5}">{text:Link5 Title}</a>{/block:ifLink5}
+        {block:ifLink6}<a href="{text:Link6}">{text:Link6 Title}</a>{/block:ifLink6}
+      </div> <!--links-->
+      
+    </div> <!--spacer-->
 
 
 </body>
